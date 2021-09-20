@@ -6,12 +6,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <ul id="exerciseList">
           Hi Steve! :)
-        </p>
+        </ul>
       </header>
     </div>
   );
 }
 
+const exercises = ['pushup', 'pullup', 'arnold curl', 'close-grip benchpress']; 
+const exerciseList = exercises.map((exercise, i) => <li class='exercise-'+{i}></li>)
+ReactDOM.render(exerciseList, document.getElementById('exerciseList'));
 export default App;
